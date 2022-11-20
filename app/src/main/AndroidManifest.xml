@@ -14,10 +14,13 @@
         android:theme="@style/Theme.PM2EXAMENGRUPO2"
         tools:targetApi="31">
         <activity
+            android:name=".GoogleMaps"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity_Contactos"
+            android:name=".Activity_Actualizar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +28,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Activity_Contact"
+            android:exported="false" />
     </application>
 
 </manifest>
