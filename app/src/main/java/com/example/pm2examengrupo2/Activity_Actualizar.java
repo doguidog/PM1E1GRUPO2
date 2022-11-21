@@ -55,7 +55,7 @@ public class Activity_Actualizar extends AppCompatActivity {
     String fotoString;
 
     Bitmap imagen;
-    static final int RESULT_GALLERY_IMG = 200;
+    static final int RESULT_GALLERY_IMG = 20;
     static final int PETICION_ACCESO_CAM = 100;
     static final int TAKE_PIC_REQUEST = 101;
     public static String latitud = "";
