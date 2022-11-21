@@ -48,8 +48,8 @@ import java.util.Locale;
 
 public class Activity_Actualizar extends AppCompatActivity {
 
-    Button btnAtras, btnActualizar,btnGaleria;
-    ImageView btnTomarfoto;
+    Button btnActualizar;
+    ImageView btnTomarfoto,btnatras5;
     EditText txtNombre,txtTelefono,txtLat,txtLon;
     ImageView Foto;
     String fotoString;
@@ -77,6 +77,7 @@ public class Activity_Actualizar extends AppCompatActivity {
         //btnAtras = (Button) findViewById(R.id.btnAtrasAU);
         btnActualizar = (Button)findViewById(R.id.btnupdate);
         btnTomarfoto = (ImageView) findViewById(R.id.btnfoto2);
+        btnatras5 = (ImageView) findViewById(R.id.btnatras5);
         //btnGaleria = (Button) findViewById(R.id.btnGaleriaAU);
         txtNombre = (EditText) findViewById(R.id.txtnombre2);
         txtTelefono = (EditText) findViewById(R.id.txttelefono2);
@@ -90,13 +91,6 @@ public class Activity_Actualizar extends AppCompatActivity {
 
         mostrarFoto(fotoString);
 
-        btnAtras.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),Activity_Contact.class);
-                startActivity(intent);
-            }
-        });
 
         btnActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,6 +110,14 @@ public class Activity_Actualizar extends AppCompatActivity {
             }
         });
 
+        btnatras5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),Activity_Contact.class);
+                startActivity(intent);
+            }
+        });
+
         btnTomarfoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,14 +127,6 @@ public class Activity_Actualizar extends AppCompatActivity {
 
             }
         });
-
-        btnGaleria.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GaleriaImagenes();
-            }
-        });
-
 
 
     }
@@ -204,7 +198,7 @@ public class Activity_Actualizar extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Toast.makeText(getApplicationContext(), "String Response " + response.getString("mensaje").toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Muy bien " + response.getString("mensaje").toString(), Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

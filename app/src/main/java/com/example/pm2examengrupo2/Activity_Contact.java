@@ -163,7 +163,7 @@ public class Activity_Contact extends AppCompatActivity {
         btnubicacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), GoogleMaps.class);
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                 intent.putExtra("latitud", contacto.getLatitud());
                 intent.putExtra("longitud", contacto.getLongitud());
                 startActivity(intent);
@@ -187,7 +187,7 @@ public class Activity_Contact extends AppCompatActivity {
                                     public void onClick(DialogInterface dialog, int id) {
                                         // se procede a ir a la ubicacion seteando los parametros
                                         try {
-                                            Intent intent = new Intent(getApplicationContext(), GoogleMaps.class);
+                                            Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
                                             intent.putExtra("latitud", contacto.getLatitud());
                                             intent.putExtra("longitud", contacto.getLongitud());
                                             startActivity(intent);
@@ -319,7 +319,7 @@ public class Activity_Contact extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), "Contacto eliminado exitosamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Se elimino el contacto ", Toast.LENGTH_SHORT).show();
                         listarContactos();
                     }
                 }, new Response.ErrorListener() {

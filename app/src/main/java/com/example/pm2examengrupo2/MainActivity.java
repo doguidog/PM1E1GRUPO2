@@ -93,12 +93,16 @@ public class MainActivity extends AppCompatActivity {
         btncontactos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Activity_Actualizar.class);
+                Intent intent = new Intent(getApplicationContext(),Activity_Contact.class);
                 startActivity(intent);
             }
         });
 
-
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION,}, 1000);
+        } else {
+            inicioLocalizacion();
+        }
 
     }
 
@@ -156,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //***Metodo para convertir imagen***//
+    //Metodo para convertir imagen
     private String GetStringImage(Bitmap photo) {
 
         try {
@@ -329,7 +333,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    Toast.makeText(getApplicationContext(), "String Response " + response.getString("mensaje").toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Muy bien " + response.getString("mensaje").toString(), Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

@@ -24,15 +24,17 @@
         android:theme="@style/Theme.PM2EXAMENGRUPO2"
         tools:targetApi="31">
         <activity
-            android:name=".GoogleMaps"
-            android:exported="false" />
-        <activity
             android:name=".Activity_Actualizar"
             android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCaCgj84fV1j4uLD7kefOg63yNz-QZiaT0" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_maps"></activity>
 
         <activity
             android:name=".MainActivity"
