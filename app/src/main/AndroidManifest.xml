@@ -35,7 +35,7 @@
             android:value="AIzaSyCaCgj84fV1j4uLD7kefOg63yNz-QZiaT0" />
 
         <activity
-            android:name=".Activity_Contact"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity_Contact"
             android:exported="false" />
     </application>
 
